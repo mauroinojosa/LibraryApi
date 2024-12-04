@@ -70,6 +70,16 @@ apos isso, realize um Clean Install no maeven  e execute o back-end, e depois o 
 
 Pronto, o projeto está pronto para ser rodado localmente :).
 
+#Endpoints do projeto
+
+![image](https://github.com/user-attachments/assets/5e2b3f87-a7ee-4833-9b94-f8819bf6adc7)
+
+![image](https://github.com/user-attachments/assets/e62104b7-2aba-4ba2-8ed1-d1443087779e)
+
+![image](https://github.com/user-attachments/assets/2b43ddc5-b8eb-4654-b154-4294b3dd16f8)
+
+![image](https://github.com/user-attachments/assets/0d1bae6c-9aab-43ec-b1e8-097f13163ef5)
+
 
 
 
