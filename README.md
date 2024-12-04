@@ -27,13 +27,12 @@ A API implementa as seguintes funcionalidades:
 
   ## :rocket: Tecnologias Utilizadas
 
-- **Node.js** - Ambiente de execução JavaScript
-- **Express** - Framework para criação da API
-- **Sequelize ORM** - ORM para interação com o banco de dados
+
 - **MySQL/PostgreSQL** - Banco de dados relacional
 - **JWT (JSON Web Tokens)** - Para autenticação de usuários
 - **Jest** - Framework de testes para garantir a qualidade do código
-
+- **Maeven** - Para Depêndecias e organização do projeto
+- **Thymeleaf** - Framework para front end utilizando java
 
 
 
@@ -47,6 +46,30 @@ A API implementa as seguintes funcionalidades:
 
 ### 1. Clone o repositório
 
-```bash
-git clone https://github.com/seu-usuario/LibraryApi.git
+no bash
+
+- git clone https://github.com/mauroinojosa/LibraryApi.git
+
 cd LibraryApi
+
+
+## Front-End
+va na pasta \BibliotecaAPI\Back-End\src\main\resources\application.properties
+
+e edite o arquivo de configuração para o seu banco de dados
+- spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_bd (utilizo o localhost:3306 para o banco)
+e, caso queira, atribua um valor para o server port
+- server.port=9000 (por exemplo)
+
+## Back-End
+Va para a pasta \BibliotecaAPI-Back-End\BibliotecaAPI-Back-End\Back-End\src\main\resources\application.properties
+e edite o arquivo de configuração do banco de dados
+- spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_bd (utilizo o localhost:3306 para o banco)
+
+apos isso, realize um Clean Install no maeven  e execute o back-end, e depois o front.
+
+Pronto, o projeto está pronto para ser rodado localmente :).
+
+
+
+
