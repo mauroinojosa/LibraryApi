@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Livros</title>
+    <link rel="stylesheet" type="text/css" href="/css/book/livro.css">
+</head>
+<body>
+<div class="navbar">
+    <h2>Sistema de Biblioteca</h2>
+    <ul>
+        <li><a href="/usuario">Usuários</a></li>
+        <li><a href="/endereco">Endereço</a></li>
+        <li><a href="/livro">Livros</a></li>
+        <li><a href="/emprestimos">Empréstimos</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h1>Lista de Livros</h1>
+
+    <!-- Botão para redirecionar ao formulário de cadastro -->
+    <a href="/livro/formulario">
+        <button type="button">Cadastrar Novo Livro</button>
+    </a>
+
+    <!-- Formulário de busca por ID -->
+    <form th:action="@{/livro/buscar}" method="get">
+        <label for="livroId">Buscar por ID:</label>
+        <input type="text" id="livroId" name="livroId">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <a href="/livro">
+        <button type="button">Mostrar Todos</button>
+    </a>
+
+    <div class="content-wrapper">
+        <div class="grid-container">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Ano de Publicação</th>
+                    <th>Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="livro : ${livro}">
+                    <td th:text="${livro.livroId}"></td>
+                    <td th:text="${livro.titulo}"></td>
+                    <td th:text="${livro.autor}"></td>
+                    <td th:text="${livro.anoPublicacao}"></td>
+                    <td>
+                        <!-- Botão de atualizar -->
+                        <form th:action="@{/livro/atualizar/{id}(id=${livro.livroId})}" method="get" style="display:inline;">
+                            <button type="submit">Atualizar</button>
+                        </form>
+                        <!-- Botão de apagar -->
+                        <form th:action="@{/livro/apagar/{id}(id=${livro.livroId})}" method="post" style="display:inline;">
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit">Apagar</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
