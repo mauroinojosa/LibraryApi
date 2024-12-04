@@ -1,0 +1,32 @@
+
+<link rel="stylesheet" type="text/css" href="/css/loan/formulario.css">
+
+<form action="/emprestimos/editar" method="post">
+    <input type="hidden" name="id" th:value="${emprestimo.id}" />
+
+    <label for="usuarioId">Usuário:</label>
+    <select id="usuarioId" name="usuarioId" required>
+        <option th:each="usuario : ${usuarios}"
+                th:value="${usuario.id}"
+                th:text="${usuario.nomeCompletoUsuario}"
+                th:selected="${usuario.id == emprestimo.usuarioId}"></option>
+    </select>
+
+    <label for="livroId">Livro:</label>
+    <select id="livroId" name="livroId" required>
+        <option th:each="livro : ${livros}"
+                th:value="${livro.id}"
+                th:text="${livro.titulo}"
+                th:selected="${livro.id == emprestimo.livroId}"></option>
+    </select>
+
+    <label for="dataInicial">Data Inicial:</label>
+    <input type="date" id="dataInicial" name="dataInicial"
+           th:value="${emprestimo.dataInicial}" required />
+
+    <label for="dataFinal">Data Final:</label>
+    <input type="date" id="dataFinal" name="dataFinal"
+           th:value="${emprestimo.dataFinal}" required />
+
+    <button type="submit">Salvar Alterações</button>
+</form>

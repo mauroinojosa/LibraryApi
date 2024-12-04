@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Atualizar Livro</title>
+    <link rel="stylesheet" type="text/css" href="/css/book/formulario.css">
+</head>
+<body>
+<h1>Atualizar Livro</h1>
+
+<form th:action="@{/livro/atualizar/{id}(id=${livro.livroId})}" method="post">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" th:value="${livro.titulo}">
+
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" name="autor" th:value="${livro.autor}">
+
+    <label for="anoPublicacao">Ano de Publicação:</label>
+    <input type="date" id="anoPublicacao" name="anoPublicacao" th:value="${livro.anoPublicacao}">
+
+    <button type="submit">Atualizar</button>
+</form>
+</body>
+</html>
