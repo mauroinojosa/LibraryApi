@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Empréstimos</title>
+    <link rel="stylesheet" type="text/css" href="/css/loan/emprestimo.css">
+
+</head>
+<body>
+<div class="navbar">
+    <h2>Sistema de Biblioteca</h2>
+    <ul>
+        <li><a href="/usuario">Usuários</a></li>
+        <li><a href="/endereco">Endereços</a></li>
+        <li><a href="/livro">Livros</a></li>
+        <li><a href="/emprestimos">Empréstimos</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h1>Lista de Empréstimos</h1>
+    <div class="mb-2">
+        <a href="/emprestimos/novo">
+            <button type="button">Novo Empréstimo</button>
+        </a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="grid-container scrollable-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Livro</th>
+                    <th>Data Inicial</th>
+                    <th>Data Final</th>
+                    <th>Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="emprestimo : ${emprestimos}">
+                    <td th:text="${emprestimo.nomeCompletoUsuario}"></td>
+                    <td th:text="${emprestimo.tituloLivro}"></td>
+                    <td th:text="${emprestimo.dataInicial}"></td>
+                    <td th:text="${emprestimo.dataFinal}"></td>
+                    <td>
+                        <a th:href="@{'/emprestimos/editar/' + ${emprestimo.getId()}}">
+                            <button>Editar</button>
+                        </a>
+                        <form action="/emprestimos/deletar" method="post">
+                            <input type="hidden" name="id" th:value="${emprestimo.id}" />
+                            <button type="submit">Deletar</button>
+                        </form>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
