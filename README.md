@@ -1,10 +1,11 @@
-<h1 align="center"> LibraryApi</h1>
+<h1 align="center"> LibraryApi 📚</h1>
 
 <h1>Introdução</h1>
 
 O projeto LibraryApi é uma aplicação de API desenvolvida para simular a gestão de uma bilbioteca,.
 O sistema permite o gerenciamento de livros, empréstimo, endereço e usuário. Através dessa API, é possível realizar operações como o cadastro de livros, a criação e edição de usuários, registro de empréstimos de livros e cadastro de endereços.
 
+## :bookmark_tabs: Descrição
 
 <h1>Funcionalidades</h1>
 
@@ -50,17 +51,35 @@ no bash
 
 - git clone https://github.com/mauroinojosa/LibraryApi.git
 
-cd LibraryApi
+cd LibraryApi\BibliotecaAPI\Back-End
+
+é necessário também instalar algumas dependências caso queira colaborar com o projeto como:
+- JDK 17 ou superior
+  Se necessário, adicionar ao PATH
+  para verificar a versão do java, voce pode escrever "java -version" no cmd ou bash
+- Apache Maven
+  Você instala o maven e coloca o diretório do bin no PATH do sistema
+  escreva mvn -v para verificar a versão do maven e confirmar se ele está instalado no sistema
+- Docker
+  No docker, é necessário o docker desktop para o windows
 
 
 ## Front-End/Back-end
-Por ser utilizado o Thymesia para elaboração do projeto, é necessário somente:
+Por ser utilizado o Thymeleaf para elaboração do projeto, é necessário somente as seguintes configurações
 va na pasta \BibliotecaAPI\Back-End\src\main\resources\application.properties
 
 e edite o arquivo de configuração para o seu banco de dados
 - spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_bd (utilizo o localhost:3306 para o banco)
+- atribuir o login e senha para o banco em
+- spring.datasource.username=(usuário do banco)
+- spring.datasource.password=(senha do banco)
 e, caso queira, atribua um valor para o server port
 - server.port=9000 (por exemplo)
+Depois, utiize os comandos para rodar o docker
+- docker compose build —no-cache
+e
+- docker compose build —no-cache
+então, abra o localhost com a porta escolhida no server.port e
 
 Pronto, o projeto está pronto para ser rodado localmente :).
 
