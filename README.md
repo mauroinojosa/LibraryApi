@@ -53,20 +53,14 @@ no bash
 cd LibraryApi
 
 
-## Front-End
+## Front-End/Back-end
+Por ser utilizado o Thymesia para elaboração do projeto, é necessário somente:
 va na pasta \BibliotecaAPI\Back-End\src\main\resources\application.properties
 
 e edite o arquivo de configuração para o seu banco de dados
 - spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_bd (utilizo o localhost:3306 para o banco)
 e, caso queira, atribua um valor para o server port
 - server.port=9000 (por exemplo)
-
-## Back-End
-Va para a pasta \BibliotecaAPI-Back-End\BibliotecaAPI-Back-End\Back-End\src\main\resources\application.properties
-e edite o arquivo de configuração do banco de dados
-- spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_bd (utilizo o localhost:3306 para o banco)
-
-apos isso, realize um Clean Install no maeven  e execute o back-end, e depois o front.
 
 Pronto, o projeto está pronto para ser rodado localmente :).
 
