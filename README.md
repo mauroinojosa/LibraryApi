@@ -34,6 +34,7 @@ A API implementa as seguintes funcionalidades:
 - **Jest** - Framework de testes para garantir a qualidade do código
 - **Maeven** - Para Depêndecias e organização do projeto
 - **Thymeleaf** - Framework para front end utilizando java
+- **Docker** - containerização do projeto
 
 
 
@@ -53,15 +54,19 @@ no bash
 
 cd LibraryApi\BibliotecaAPI\Back-End
 
-é necessário também instalar algumas dependências caso queira colaborar com o projeto como:
-- JDK 17 ou superior
-  Se necessário, adicionar ao PATH
-  para verificar a versão do java, voce pode escrever "java -version" no cmd ou bash
-- Apache Maven
-  Você instala o maven e coloca o diretório do bin no PATH do sistema
-  escreva mvn -v para verificar a versão do maven e confirmar se ele está instalado no sistema
-- Docker
-  No docker, é necessário o docker desktop para o windows
+é necessário também instalar algumas dependências **caso queira colaborar com o projeto**  
+Para mais informações, cheque o Contribution.md
+- **JDK 17 ou superior**
+  
+  Se necessário, adicionar ao PATH.
+  para verificar a versão do java, voce pode escrever "java -version" no cmd ou bash.
+- **Apache Maven**
+  
+  Você instala o maven e coloca o diretório do bin no PATH do sistema.
+  escreva mvn -v para verificar a versão do maven e confirmar se ele está instalado no sistema.
+- **Docker**
+  
+  No docker, é necessário o docker desktop para o windows.
 
 
 ## Front-End/Back-end
@@ -93,6 +98,19 @@ Pronto, o projeto está pronto para ser rodado localmente :).
 
 ![image](https://github.com/user-attachments/assets/0d1bae6c-9aab-43ec-b1e8-097f13163ef5)
 
+## 👥 Colaboradores
+  - [Mauro Inojosa](github.com/mimalro) - Documentação do projeto
+  - [Lucas Vieira] - Desenvolvedor
+  - [Leonardo Barbosa] - Scrum Master
+  - [Renan Laurindo] -
+  - [Allan Maia] -
+  - [Geraldo Neto] - 
+
+
+
+## 📝 Licença
+
+Este projeto está licenciado sobre o GNU General Public License -  veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 
 
