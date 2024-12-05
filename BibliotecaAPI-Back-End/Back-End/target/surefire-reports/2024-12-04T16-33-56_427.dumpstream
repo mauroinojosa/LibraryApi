@@ -1,5 +1,0 @@
-# Created at 2024-12-04T16:33:56.661
-Boot Manifest-JAR contains absolute paths in classpath 'E:\Projetos\Trabalho quarta\LibraryApi\BibliotecaAPI-Back-End\BibliotecaAPI-Back-End\Back-End\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-
