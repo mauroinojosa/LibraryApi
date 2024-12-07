@@ -99,12 +99,12 @@ Pronto, o projeto está pronto para ser rodado localmente :).
 ![image](https://github.com/user-attachments/assets/0d1bae6c-9aab-43ec-b1e8-097f13163ef5)
 
 ## 👥 Colaboradores
-  - [Mauro Inojosa](github.com/mimalro) - Documentação do projeto
+  - [Mauro Inojosa](github.com/mimalro) - Gerente de configuração
   - [Lucas Vieira] - Desenvolvedor
-  - [Leonardo Barbosa] - Scrum Master
-  - [Renan Laurindo] -
-  - [Allan Maia] -
-  - [Geraldo Neto] - 
+  - [Leonardo Barbosa] - Documentador
+  - [Renan Laurindo] - Scrum Master
+  - [Allan Maia] - Desenvolvedor
+  - [Geraldo Neto] - Documentador
 
 
 
