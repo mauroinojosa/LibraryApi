@@ -28,7 +28,7 @@ public class EnderecoWebController {
         return "redirect:/endereco";
     }
 
-    @GetMapping("")
+    @GetMapping
     public String listarEnderecos(Model model) {
         List<EnderecoResponseDTO> enderecos = enderecoService.buscarEnderecos();
         model.addAttribute("enderecos", enderecos);

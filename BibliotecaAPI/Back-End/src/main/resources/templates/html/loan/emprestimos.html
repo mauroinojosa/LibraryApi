@@ -2,13 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Empréstimos</title>
+    <title>Empréstimos</title>
     <link rel="stylesheet" type="text/css" href="/css/loan/emprestimo.css">
-
 </head>
 <body>
 <div class="navbar">
-    <h2>Sistema de Biblioteca</h2>
+    <a href="/" class="home">Biblioteca</a>
     <ul>
         <li><a href="/usuario">Usuários</a></li>
         <li><a href="/endereco">Endereços</a></li>
@@ -18,10 +17,23 @@
 </div>
 
 <div class="main-content">
-    <h1>Lista de Empréstimos</h1>
-    <div class="mb-2">
+    <h1>Empréstimos</h1>
+
+    <div class="action-buttons">
         <a href="/emprestimos/novo">
-            <button type="button">Novo Empréstimo</button>
+            <button type="button" class="btn-novo-usuario">Novo Empréstimo</button>
+        </a>
+
+        <!-- Formulário de busca por ID -->
+        <form th:action="@{/emprestimos/buscar}" method="get" class="search-form">
+            <label for="usuarioId">Buscar por ID:</label>
+            <input type="text" id="usuarioId" name="usuarioId">
+            <button type="submit" class="btn-buscar">Buscar</button>
+        </form>
+
+        <!-- Botão para mostrar todos os usuários -->
+        <a href="/emprestimos">
+            <button type="button" class="btn-mostrar-todos">Mostrar Todos</button>
         </a>
     </div>
 
@@ -44,14 +56,13 @@
                     <td th:text="${emprestimo.dataInicial}"></td>
                     <td th:text="${emprestimo.dataFinal}"></td>
                     <td>
-                        <a th:href="@{'/emprestimos/editar/' + ${emprestimo.getId()}}">
-                            <button>Editar</button>
+                        <a th:href="@{'/emprestimos/editar/' + ${emprestimo.getId()} }">
+                            <button class="btn-atualizar">Atualizar</button>
                         </a>
-                        <form action="/emprestimos/deletar" method="post">
+                        <form action="/emprestimos/deletar" method="post" style="display:inline;">
                             <input type="hidden" name="id" th:value="${emprestimo.id}" />
-                            <button type="submit">Deletar</button>
+                            <button type="submit" class="btn-apagar">Apagar</button>
                         </form>
-
                     </td>
                 </tr>
                 </tbody>

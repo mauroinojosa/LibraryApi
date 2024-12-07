@@ -7,6 +7,17 @@
     <link rel="stylesheet" type="text/css" href="/css/book/formulario.css">
 </head>
 <body>
+<div class="navbar">
+    <a href="/index">
+        <button type="button">Sistema de Biblioteca</button>
+    </a>
+    <ul>
+        <li><a href="/usuario">Usuários</a></li>
+        <li><a href="/endereco">Endereços</a></li>
+        <li><a href="/livro">Livros</a></li>
+        <li><a href="/emprestimos">Empréstimos</a></li>
+    </ul>
+</div>
 <h1>Cadastrar Livro</h1>
 
 <form th:action="@{/livro/salvar}" th:object="${livro}" method="post">

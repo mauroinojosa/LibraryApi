@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista de Usuários</title>
+    <title>Usuários</title>
     <link rel="stylesheet" type="text/css" href="/css/user/usuario.css">
 </head>
 <body>
 <div class="navbar">
-    <h2>Sistema de Biblioteca</h2>
-    <ul>
+    <a href="/" class="home">Biblioteca</a>
+    <ul >
         <li><a href="/usuario">Usuários</a></li>
-        <li><a href="/endereco">Endereço</a></li>
+        <li><a href="/endereco">Endereços</a></li>
         <li><a href="/livro">Livros</a></li>
         <li><a href="/emprestimos">Empréstimos</a></li>
     </ul>
 </div>
 
 <div class="main-content">
-    <h1>Lista de Usuários</h1>
+    <h1>Usuários</h1>
 
-    <!-- Botão para redirecionar ao formulário de cadastro -->
-    <a href="/usuario/form">
-        <button type="button">Cadastrar Novo Usuário</button>
-    </a>
+    <div class="action-buttons">
+        <!-- Botão para redirecionar ao formulário de cadastro -->
+        <a href="/usuario/form">
+            <button type="button" class="btn-novo-usuario">Novo Usuário</button>
+        </a>
 
-    <!-- Formulário de busca por ID -->
-    <form th:action="@{/usuario/buscar}" method="get">
-        <label for="usuarioId">Buscar por ID:</label>
-        <input type="text" id="usuarioId" name="usuarioId">
-        <button type="submit">Buscar</button>
-    </form>
+        <!-- Formulário de busca por ID -->
+        <form th:action="@{/usuario/buscar}" method="get" class="search-form">
+            <label for="usuarioId" >Buscar por ID:</label>
+            <input type="text" id="usuarioId" name="usuarioId">
+            <button type="submit" class="btn-buscar">Buscar</button>
+        </form>
 
-    <!-- Botão para mostrar todos os usuários -->
-    <a href="/usuario">
-        <button type="button">Mostrar Todos</button>
-    </a>
+        <!-- Botão para mostrar todos os usuários -->
+        <a href="/usuario">
+            <button type="button" class="btn-mostrar-todos">Mostrar Todos</button>
+        </a>
+    </div>
 
     <div class="content-wrapper">
         <div class="grid-container">
-            <table border="1">
+            <table>
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -52,15 +54,15 @@
                     <td th:text="${usuario.nomeCompletoUsuario}"></td>
                     <td th:text="${usuario.emailUsuario}"></td>
                     <td>
-                        <!-- Botão de atualizar -->
-                        <form th:action="@{/usuario/atualizar/{id}(id=${usuario.usuarioId})}" method="get" style="display:inline;">
-                            <button type="submit">Atualizar</button>
-                        </form>
-                        <!-- Botão de apagar -->
-                        <form th:action="@{/usuario/apagar/{id}(id=${usuario.usuarioId})}" method="post" style="display:inline;">
-                            <input type="hidden" name="_method" value="delete">
-                            <button type="submit">Apagar</button>
-                        </form>
+                            <!-- Botão de atualizar -->
+                            <form th:action="@{/usuario/atualizar/{id}(id=${usuario.usuarioId})}" method="get" style="display:inline;">
+                                <button type="submit" class="btn-atualizar">Atualizar</button>
+                            </form>
+                            <!-- Botão de apagar -->
+                            <form th:action="@{/usuario/apagar/{id}(id=${usuario.getUsuarioId()})}" method="post" style="display:inline;">
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit" class="btn-apagar">Apagar</button>
+                            </form>
                     </td>
                 </tr>
                 </tbody>

@@ -2,6 +2,7 @@ package com.project.BibliotecaAPI.controllers;
 
 import com.project.BibliotecaAPI.dtos.requestDTO.LivroRequestDTO;
 import com.project.BibliotecaAPI.dtos.responseDTO.LivroResponseDTO;
+import com.project.BibliotecaAPI.dtos.responseDTO.UsuarioResponseDTO;
 import com.project.BibliotecaAPI.services.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class LivroWebController {
         return "redirect:/livro";
     }
 
-    @GetMapping("")
+    @GetMapping
     public String listarLivros(Model model) {
         List<LivroResponseDTO> livro = livroService.buscarLivros();
         model.addAttribute("livro", livro);
@@ -36,9 +37,9 @@ public class LivroWebController {
     }
 
     @GetMapping("/buscar")
-    public String buscarLivroPorId(@RequestParam("livroID") Long id, Model model) {
-      LivroResponseDTO livro = livroService.buscarLivroPorId(id);
-        model.addAttribute("livro", List.of(livro));
+    public String buscarUsuarioPorId(@RequestParam("livroId") Long id, Model model) {
+        LivroResponseDTO livroResponseDTO = livroService.buscarLivroPorId(id);
+        model.addAttribute("livro", List.of(livroResponseDTO));
         return "/html/book/livro";
     }
 

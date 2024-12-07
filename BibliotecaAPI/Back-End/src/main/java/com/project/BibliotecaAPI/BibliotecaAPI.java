@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BibliotecaAPI {
 
         @Value("${PORT:8080}")
-        private int port;
 
     public static void main(String[] args) {
         SpringApplication.run(BibliotecaAPI.class, args);

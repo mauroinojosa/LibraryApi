@@ -61,7 +61,6 @@ public class EmprestimoWebController {
         }
     }
 
-
     @GetMapping("/novo")
     public String novoEmprestimoForm(Model model) {
         model.addAttribute("emprestimoRequestDTO", new EmprestimoRequestDTO());

@@ -13,6 +13,7 @@ public class EmprestimoRequestDTO {
 
     private UsuarioModel usuarioModel;
     private Long usuarioId;
+    @Getter
     private Long livroId;
     private LivroModel livroModel;
 

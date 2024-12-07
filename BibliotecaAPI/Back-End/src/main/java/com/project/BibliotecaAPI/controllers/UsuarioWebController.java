@@ -28,25 +28,25 @@ public class UsuarioWebController {
         return "redirect:/usuario";
     }
 
-    @GetMapping("")
+    @GetMapping
     public String listarUsuarios(Model model) {
         List<UsuarioResponseDTO> usuarios = usuarioService.buscarUsuarios();
         model.addAttribute("usuarios", usuarios);
-        return "/html/user/usuario";
+        return "html/user/usuario";
     }
 
     @GetMapping("/buscar")
     public String buscarUsuarioPorId(@RequestParam("usuarioId") Long id, Model model) {
         UsuarioResponseDTO usuario = usuarioService.buscarUsuarioPorId(id);
         model.addAttribute("usuarios", List.of(usuario));
-        return "/html/user/usuario";
+        return "html/user/usuario";
     }
 
     @GetMapping("/atualizar/{id}")
     public String mostrarFormularioAtualizacao(@PathVariable("id") Long id, Model model) {
         UsuarioResponseDTO usuario = usuarioService.buscarUsuarioPorId(id);
         model.addAttribute("usuario", usuario);
-        return "/html/user/formularioAtualizacao";
+        return "html/user/formularioAtualizacao";
     }
 
     @PostMapping("/atualizar/{id}")

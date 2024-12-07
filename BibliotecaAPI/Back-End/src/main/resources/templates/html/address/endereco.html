@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista de Endereços</title>
+    <title>Endereços</title>
     <link rel="stylesheet" type="text/css" href="/css/address/endereco.css">
 </head>
 <body>
 <div class="navbar">
-    <h2>Sistema de Biblioteca</h2>
+    <a href="/" class="home">Biblioteca</a>
     <ul>
         <li><a href="/usuario">Usuários</a></li>
         <li><a href="/endereco">Endereços</a></li>
@@ -16,28 +16,30 @@
 </div>
 
 <div class="main-content">
-    <h1>Lista de Endereços</h1>
+    <h1>Endereços</h1>
 
-    <!-- Botão para redirecionar ao formulário de cadastro -->
-    <a href="/endereco/form">
-        <button type="button">Cadastrar Novo Endereço</button>
-    </a>
+    <div class="action-buttons">
+        <!-- Botão para redirecionar ao formulário de cadastro -->
+        <a href="/endereco/form">
+            <button type="button" class="btn-novo-usuario">Novo Endereço</button>
+        </a>
 
-    <!-- Formulário de busca por ID -->
-    <form th:action="@{/endereco/buscar}" method="get">
-        <label for="enderecoId">Buscar por ID:</label>
-        <input type="text" id="enderecoId" name="enderecoId">
-        <button type="submit">Buscar</button>
-    </form>
+        <!-- Formulário de busca por ID -->
+        <form th:action="@{/endereco/buscar}" method="get" class="search-form">
+            <label for="enderecoId">Buscar por ID:</label>
+            <input type="text" id="enderecoId" name="enderecoId">
+            <button type="submit" class="btn-buscar">Buscar</button>
+        </form>
 
-    <!-- Botão para mostrar todos os endereços -->
-    <a href="/endereco">
-        <button type="button">Mostrar Todos</button>
-    </a>
+        <!-- Botão para mostrar todos os endereços -->
+        <a href="/endereco">
+            <button type="button" class="btn-mostrar-todos">Mostrar Todos</button>
+        </a>
+    </div>
 
     <div class="content-wrapper">
         <div class="grid-container">
-            <table border="1">
+            <table>
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -58,12 +60,12 @@
                     <td>
                         <!-- Botão de atualizar -->
                         <form th:action="@{/endereco/atualizar/{id}(id=${endereco.enderecoId})}" method="get" style="display:inline;">
-                            <button type="submit">Atualizar</button>
+                            <button type="submit" class="btn-atualizar">Atualizar</button>
                         </form>
                         <!-- Botão de apagar -->
                         <form th:action="@{/endereco/apagar/{id}(id=${endereco.enderecoId})}" method="post" style="display:inline;">
                             <input type="hidden" name="_method" value="delete">
-                            <button type="submit">Apagar</button>
+                            <button type="submit" class="btn-apagar">Apagar</button>
                         </form>
                     </td>
                 </tr>

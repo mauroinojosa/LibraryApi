@@ -1,7 +1,9 @@
 package com.project.BibliotecaAPI.services;
 
 import com.project.BibliotecaAPI.dtos.requestDTO.EmprestimoRequestDTO;
+import com.project.BibliotecaAPI.dtos.requestDTO.LivroRequestDTO;
 import com.project.BibliotecaAPI.dtos.responseDTO.EmprestimoResponseDTO;
+import com.project.BibliotecaAPI.dtos.responseDTO.LivroResponseDTO;
 import com.project.BibliotecaAPI.models.EmprestimoModel;
 import com.project.BibliotecaAPI.models.LivroModel;
 import com.project.BibliotecaAPI.models.UsuarioModel;
@@ -45,7 +47,7 @@ public class EmprestimoService {
             responseDTO.setTituloLivro(livroOpt.get().getTitulo());
             return responseDTO;
         } else {
-            return null; // ou lançar uma exceção customizada
+            return null;
         }
     }
 
@@ -59,7 +61,7 @@ public class EmprestimoService {
         if (emprestimoOpt.isPresent()) {
             return getEmprestimoResponseDTO(emprestimoOpt.get());
         } else {
-            return null; // ou lançar uma exceção customizada
+            return null;
         }
     }
 
@@ -68,10 +70,9 @@ public class EmprestimoService {
             emprestimoRepository.deleteById(id);
             return true;
         } else {
-            return false; // ou lançar uma exceção customizada
+            return false;
         }
     }
-
     public EmprestimoResponseDTO editarEmprestimo(Long id, EmprestimoRequestDTO emprestimoRequestDTO) {
         Optional<EmprestimoModel> emprestimoOpt = emprestimoRepository.findById(id);
         if (emprestimoOpt.isPresent()) {
@@ -92,9 +93,8 @@ public class EmprestimoService {
                 return responseDTO;
             }
         }
-        return null; // ou lançar uma exceção customizada
+        return null;
     }
-
     private EmprestimoResponseDTO getEmprestimoResponseDTO(EmprestimoModel emprestimoModel) {
         EmprestimoResponseDTO responseDTO = new EmprestimoResponseDTO();
         BeanUtils.copyProperties(emprestimoModel, responseDTO);
